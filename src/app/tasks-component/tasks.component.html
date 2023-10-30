@@ -1,0 +1,29 @@
+<h3> Listado de tareas</h3>
+
+<ul class="mt-2 list-group">
+  <li *ngFor="let tarea of tareas" class="list-group-item">
+    <strong> ID: </strong> {{ tarea.id }},
+    <strong> Nombre: </strong> {{ tarea.nombre }},
+    <strong> Completado: </strong> {{ tarea.completado }};
+  </li>
+</ul>
+
+<!-- <button
+  (click)="removeTask()"
+  class="btn btn-outline-danger">
+  Borrar tarea
+</button> -->
+
+<div>
+  <form (submit)="agregarTarea()">
+    <input type="text" [(ngModel)]="nuevaTarea" name="nuevaTarea" placeholder=" Nombre de la tarea" required>
+    <button type="submit">Agregar tarea</button>
+  </form>
+</div>
+
+<div>
+  <form (submit)="removeTask()">
+    <input type="number"  [(ngModel)]="tareaAEliminar" name="tareaAEliminar"     placeholder=" ID de la tarea" required>
+    <button type="submit">Eliminar tarea</button>
+  </form>
+</div>
